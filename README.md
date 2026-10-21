@@ -213,8 +213,6 @@ Dois pontos fundamentais:
 | 3 | Bugatti Chiron | 0,0015 | 0,047 N | 74,2 km/h | 0,0950 |
 | 3 | Mercedes-Benz G500 | 0,0018 | 0,084 N | 72,6 km/h | 0,1517 |
 
-Os mesmos dados estão em [`analysis/resumo_testes.csv`](analysis/resumo_testes.csv).
-
 ### 8.3 Estatística dos 3 ensaios
 
 | Grandeza | Bugatti Chiron | Mercedes-Benz G500 | Razão G500 / Chiron |
@@ -223,8 +221,6 @@ Os mesmos dados estão em [`analysis/resumo_testes.csv`](analysis/resumo_testes.
 | Pico de força médio | 0,048 ± 0,003 N | 0,085 ± 0,004 N | 1,76× |
 | Velocidade média no pico | 76,2 km/h | 71,8 km/h | — |
 | Coef. de variação do Cd | 7,2 % | 6,5 % | — |
-
-(± = desvio padrão amostral, n = 3. Gerado por [`analysis/gerar_resumo.py`](analysis/gerar_resumo.py).)
 
 ![Resumo Cd e picos](images/resultados/resumo_cd_picos.png)
 
