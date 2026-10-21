@@ -1,6 +1,6 @@
-# Wind Tunnel 
+# Wind Tunnel
 
-**Túnel de vento experimental instrumentado, com coleta de dados em tempo real, interface em Python e comparação aerodinâmica entre modelos em miniatura.**
+**Túnel de vento experimental instrumentado, com aquisição de dados em tempo real, interface em Python e comparação aerodinâmica entre modelos em miniatura.**
 
 ![Visão geral do túnel](images/hardware/00_visao_geral_tunel.png)
 
@@ -64,8 +64,6 @@ O princípio do projeto é o mesmo usado em ensaios profissionais, em escalas e 
 ### 4.1 Visão geral
 
 O conjunto é montado sobre uma base de madeira pintada de preto, com dois apoios que sustentam o tubo azul. Na lateral do tubo há uma **janela transparente** para observação, iluminada internamente por fita de LED. Ao lado ficam a fonte, a caixa eletrônica, o painel de controle e o sistema de fumaça.
-
-![Visão geral em três ângulos](images/hardware/00_visao_geral_tunel.png)
 
 ### 4.2 Subsistemas
 
@@ -181,7 +179,7 @@ Dois pontos fundamentais:
 | Área frontal | Chiron: 0,0015 m² · G500: 0,0018 m² |
 | Densidade do ar | 1,225 kg/m³ |
 | Rampa de PWM | 30 → 255 |
-| Repetições | 3 ensaios (Teste 3, Teste 4, Teste 5) |
+| Repetições | 3 ensaios (Teste 1, Teste 2, Teste 3) |
 | Saída | Curva Força × Velocidade, pico de força e Cd médio |
 
 ### Os modelos testados
@@ -202,7 +200,7 @@ Dois pontos fundamentais:
 
 | Teste 1 | Teste 2 | Teste 3 |
 |---|---|---|
-| ![Teste 3](images/resultados/teste_3.png) | ![Teste 4](images/resultados/teste_4.png) | ![Teste 5](images/resultados/teste_5.png) |
+| ![Teste 1](images/resultados/teste_1.png) | ![Teste 2](images/resultados/teste_2.png) | ![Teste 3](images/resultados/teste_3.png) |
 
 ### 8.2 Dados extraídos dos gráficos
 
@@ -215,6 +213,7 @@ Dois pontos fundamentais:
 | 3 | Bugatti Chiron | 0,0015 | 0,047 N | 74,2 km/h | 0,0950 |
 | 3 | Mercedes-Benz G500 | 0,0018 | 0,084 N | 72,6 km/h | 0,1517 |
 
+Os mesmos dados estão em [`analysis/resumo_testes.csv`](analysis/resumo_testes.csv).
 
 ### 8.3 Estatística dos 3 ensaios
 
@@ -224,6 +223,8 @@ Dois pontos fundamentais:
 | Pico de força médio | 0,048 ± 0,003 N | 0,085 ± 0,004 N | 1,76× |
 | Velocidade média no pico | 76,2 km/h | 71,8 km/h | — |
 | Coef. de variação do Cd | 7,2 % | 6,5 % | — |
+
+(± = desvio padrão amostral, n = 3. Gerado por [`analysis/gerar_resumo.py`](analysis/gerar_resumo.py).)
 
 ![Resumo Cd e picos](images/resultados/resumo_cd_picos.png)
 
@@ -251,8 +252,8 @@ Em toda a faixa de velocidades, nos três ensaios, **a curva do G500 permanece a
 ### 9.2 Pontos de atenção (leitura crítica)
 
 - **Valores absolutos de Cd abaixo dos de veículos reais.** Os Cds obtidos (≈ 0,09 e ≈ 0,15) são bem menores do que os de carros reais (da ordem de 0,3–0,4 para um supercarro e 0,4–0,55 para uma Classe G, conforme versão). Isso é esperado em um túnel caseiro, e pode vir de: número de Reynolds muito menor, **bloqueio** da seção de testes, definição da área de referência, calibração da velocidade e da célula de carga, e escoamento não uniforme. Por isso, **os resultados devem ser interpretados de forma relativa (comparativa), não como Cd oficial dos veículos.**
-- **Degrau de força em velocidade zero.** Nas curvas há força de ≈ 0,005 N em velocidade próxima de zero (G500 nos três testes; Chiron no Teste 3). Nos testes 4 e 5, o Chiron fica em ≈ 0 N nos primeiros km/h e salta para ≈ 0,005 N. Indica **offset/zona morta** da medição (tara, atrito da haste, histerese). Esse offset **infla o Cd calculado em baixas velocidades**, onde a pressão dinâmica é pequena.
-- **Expoente menor que 2.** Se F ∝ v², dobrar a velocidade quadruplicaria a força. Nos dados, de ≈ 40 para ≈ 78 km/h (×1,95) a força do Chiron (Teste 3) sobe ≈ 2,5× — um expoente efetivo de ≈ 1,4; no G500, ≈ 1,5. Causas plausíveis: offset de força, calibração do anemômetro em baixas velocidades e variação do Reynolds com a velocidade.
+- **Degrau de força em velocidade zero.** Nas curvas há força de ≈ 0,005 N em velocidade próxima de zero (G500 nos três testes; Chiron no Teste 1). Nos testes 2 e 3, o Chiron fica em ≈ 0 N nos primeiros km/h e salta para ≈ 0,005 N. Indica **offset/zona morta** da medição (tara, atrito da haste, histerese). Esse offset **infla o Cd calculado em baixas velocidades**, onde a pressão dinâmica é pequena.
+- **Expoente menor que 2.** Se F ∝ v², dobrar a velocidade quadruplicaria a força. Nos dados, de ≈ 40 para ≈ 78 km/h (×1,95) a força do Chiron (Teste 1) sobe ≈ 2,5× — um expoente efetivo de ≈ 1,4; no G500, ≈ 1,5. Causas plausíveis: offset de força, calibração do anemômetro em baixas velocidades e variação do Reynolds com a velocidade.
 - **Subida abrupta no fim das curvas.** Em ≈ 65–72 km/h a curva do G500 fica quase vertical (a força continua subindo enquanto a velocidade praticamente satura). Hipótese: o PWM se aproxima do máximo e/ou o anemômetro satura, enquanto a força ainda aumenta; também pode haver efeito de bloqueio. **Merece investigação** com anemômetro de referência.
 - **Picos em velocidades diferentes.** O Chiron foi até ≈ 74–78 km/h e o G500 até ≈ 71–73 km/h. Comparar picos de força diretamente não é equivalente a comparar na mesma velocidade — por isso a seção 8.4.
 - **Média simples de Cd por ponto.** O Cd médio é a média dos Cds pontuais, e pontos de baixa velocidade (com offset) pesam bastante. Uma alternativa mais robusta é ajustar `F = ½ρCdA·v²` por mínimos quadrados, ou calcular o Cd apenas acima de uma velocidade mínima (ex.: > 20 km/h).
@@ -286,10 +287,8 @@ Em toda a faixa de velocidades, nos três ensaios, **a curva do G500 permanece a
 - O sistema de aquecimento da fumaça trabalha com **temperaturas elevadas**: use componentes dimensionados para o calor, isolamento adequado e proteção contra sobretemperatura; nunca o deixe ligado sem supervisão.
 - Verifique a alimentação e o aterramento antes de ligar à rede elétrica.
 
-
 ## 13. Autoria e licença
 
 **Autor:** Filipe da Silva Rupp — idealização, construção do equipamento, firmware, software, ensaios e análise.
 
- 
- 
+Distribuído sob a licença MIT (veja [`LICENSE`](LICENSE)). Os modelos de carros em miniatura são de seus respectivos fabricantes e foram usados apenas como objetos de ensaio educacional.
