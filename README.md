@@ -245,7 +245,7 @@ Em toda a faixa de velocidades, nos três ensaios, **a curva do G500 permanece a
 3. **Efeito da área:** parte da diferença de força vem da maior área frontal do G500 (0,0018 vs 0,0015 m², +20 %). O Cd remove esse efeito — e mesmo assim o G500 é ≈ 66 % maior, ou seja, **o formato, e não só o tamanho, explica a diferença**.
 4. **Esteira:** o formato de caixa do G500 (para-brisa quase vertical, traseira abrupta, pneu sobressalente) favorece o descolamento do escoamento e uma esteira larga — coerente com a maior resistência observada.
 
-### 9.2 Pontos de atenção (leitura crítica)
+### 9.2 Pontos de atenção
 
 - **Valores absolutos de Cd abaixo dos de veículos reais.** Os Cds obtidos (≈ 0,09 e ≈ 0,15) são bem menores do que os de carros reais (da ordem de 0,3–0,4 para um supercarro e 0,4–0,55 para uma Classe G, conforme versão). Isso é esperado em um túnel caseiro, e pode vir de: número de Reynolds muito menor, **bloqueio** da seção de testes, definição da área de referência, calibração da velocidade e da célula de carga, e escoamento não uniforme. Por isso, **os resultados devem ser interpretados de forma relativa (comparativa), não como Cd oficial dos veículos.**
 - **Degrau de força em velocidade zero.** Nas curvas há força de ≈ 0,005 N em velocidade próxima de zero (G500 nos três testes; Chiron no Teste 1). Nos testes 2 e 3, o Chiron fica em ≈ 0 N nos primeiros km/h e salta para ≈ 0,005 N. Indica **offset/zona morta** da medição (tara, atrito da haste, histerese). Esse offset **infla o Cd calculado em baixas velocidades**, onde a pressão dinâmica é pequena.
