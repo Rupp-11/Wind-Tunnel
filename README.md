@@ -291,9 +291,5 @@ Em toda a faixa de velocidades, nos três ensaios, **a curva do G500 permanece a
 
 **Autor:** Filipe da Silva Rupp — idealização, construção do equipamento, firmware, software, ensaios e análise.
 
-
----
-
-
-#   W i n d - T u n n e l  
+ 
  
