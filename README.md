@@ -290,5 +290,3 @@ Em toda a faixa de velocidades, nos três ensaios, **a curva do G500 permanece a
 ## 13. Autoria e licença
 
 **Autor:** Filipe da Silva Rupp — idealização, construção do equipamento, firmware, software, ensaios e análise.
-
-Distribuído sob a licença MIT (veja [`LICENSE`](LICENSE)). Os modelos de carros em miniatura são de seus respectivos fabricantes e foram usados apenas como objetos de ensaio educacional.
