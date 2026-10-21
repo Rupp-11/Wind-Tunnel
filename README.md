@@ -283,6 +283,8 @@ Em toda a faixa de velocidades, nos três ensaios, **a curva do G500 permanece a
 - O sistema de aquecimento da fumaça trabalha com **temperaturas elevadas**: use componentes dimensionados para o calor, isolamento adequado e proteção contra sobretemperatura; nunca o deixe ligado sem supervisão.
 - Verifique a alimentação e o aterramento antes de ligar à rede elétrica.
 
-## 13. Autoria
-
+## 13. Autoria e licença
+ 
 **Autor:** Filipe da Silva Rupp — idealização, construção do equipamento, firmware, software, ensaios e análise.
+ 
+Distribuído sob a licença MIT (veja [`LICENSE`](LICENSE)). Os modelos de carros em miniatura são de seus respectivos fabricantes e foram usados apenas como objetos de ensaio educacional.
